@@ -22,7 +22,7 @@ class TEXT_APP:
             textfile.close()
 
         def save_text():
-            
+            man="man"
 
         textarea=Text(mainwindow,width=70,height=15,font='times 15 bold')
         textarea.pack(pady=30)
