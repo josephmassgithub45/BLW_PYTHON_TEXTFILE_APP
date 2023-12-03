@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import filedialog
 
 class TEXT_APP:
     def __init__(self,at,ac):
@@ -9,22 +10,29 @@ class TEXT_APP:
         mainwindow=Tk()
         mainwindow.title(self.apptitle)
         mainwindow.configure(background=self.appcolor)
-        mainwindow.geometry('800x550')
+        mainwindow.iconbitmap()
+        mainwindow.geometry('770x650')
         mainwindow.resizable(False,False)
 
-        def read():
-            textfile=open("DATABASE.txt")
+        def open_text():
+            file=filedialog.askopenfilename(initialdir="c:",title="BLW_OPEN TEXT FILE")
+            textfile=open(file,'r')
             notes=textfile.read()
             textarea.insert(END,notes)
+            textfile.close()
 
-       
+        def save_text():
+            name="man"
 
-        textarea=Text(mainwindow,width=50)
-        textarea.grid(row=0,column=2)
+        textarea=Text(mainwindow,width=70,height=15,font='times 15 bold')
+        textarea.pack(pady=30)
         
+        open_button=Button(mainwindow,text="Open Text File",command=open_text)
+        open_button.pack(pady=10)
 
-        openbutton=Button(mainwindow,text="OPEN",action=read())
-        openbutton.grid(row=1,column=2)
+        save_button=Button(mainwindow,text="Save File",command=save_text)
+        save_button.pack(padx=20)
+        
 
 
         mainwindow.mainloop()
