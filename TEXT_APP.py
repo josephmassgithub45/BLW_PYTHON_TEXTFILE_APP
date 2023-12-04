@@ -10,9 +10,9 @@ class TEXT_APP:
         mainwindow=Tk()
         mainwindow.title(self.apptitle)
         mainwindow.configure(background=self.appcolor)
-        mainwindow.iconbitmap()
+        mainwindow.iconbitmap("")
         mainwindow.geometry('1065x650')
-        mainwindow.resizable(False,False)
+        '''mainwindow.resizable(False,False)'''
 
         def open_text():
             text_file=filedialog.askopenfilename(initialdir="c:",title="BLW_OPEN TEXT FILE")
@@ -43,5 +43,5 @@ class TEXT_APP:
 
 
 
-APPLICATION=TEXT_APP("BLUE LIGHT WAVES                 BLW_TEXT_APP","red")
+APPLICATION=TEXT_APP("BLUE LIGHT WAVES                                 BLW_TEXT_APP","blue")
 APPLICATION.home()
