@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import filedialog
+from tkinter import image
 
 class TEXT_APP:
     def __init__(self,at,ac):
@@ -10,7 +11,7 @@ class TEXT_APP:
         mainwindow=Tk()
         mainwindow.title(self.apptitle)
         mainwindow.configure(background=self.appcolor)
-        mainwindow.iconbitmap("")
+        mainwindow.iconbitmap('BLUE LIGHT WAVES AI LOGO.ico')
         mainwindow.geometry('1065x650')
         '''mainwindow.resizable(False,False)'''
 
