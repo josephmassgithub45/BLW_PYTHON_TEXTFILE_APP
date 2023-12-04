@@ -27,6 +27,9 @@ class TEXT_APP:
             text_file=filedialog.askopenfilename(initialdir="c:",title="BLW_OPEN TEXT FILE")
             text_file=open(text_file,"w")
             text_file.write(textarea.get(1.0,END))
+            text_file.close()
+            message=Label(dialog,text="File Saved Successfully...",font='times 20 bold',background="grey")
+            message.place(x=50,y=7)
 
 
         heading=Label(mainwindow,text="BLUE LIGHT WAVES ",font='times 25 bold',foreground="white",background="blue")
@@ -34,12 +37,15 @@ class TEXT_APP:
 
         textarea=Text(mainwindow,width=96,height=20,font='times 15 bold',background='grey',border=20)
         textarea.place(x=30,y=50)
+
+        dialog=Frame(mainwindow,width=400,height=50,background='grey')
+        dialog.place(x=633,y=570)
         
         open_button=Button(mainwindow,text="Open Text File",font='times 15 bold',command=open_text)
-        open_button.place(x=390,y=560)
+        open_button.place(x=290,y=560)
         
         save_button=Button(mainwindow,text="Save File",font='times 15 bold',background="red",command=save_text)
-        save_button.place(x=560,y=560)
+        save_button.place(x=460,y=560)
         
         developer=Label(mainwindow,text="Developed By Mr Joseph Massaquoi.",font='times 20 bold',background="blue",foreground="white")
         developer.place(x=30,y=600)
