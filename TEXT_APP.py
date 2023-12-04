@@ -11,7 +11,7 @@ class TEXT_APP:
         mainwindow=Tk()
         mainwindow.title(self.apptitle)
         mainwindow.configure(background=self.appcolor)
-        mainwindow.iconbitmap('BLUE LIGHT WAVES AI LOGO.ico')
+        '''mainwindow.iconbitmap('BLUE LIGHT WAVES AI LOGO.ico')'''
         mainwindow.geometry('1065x650')
         '''mainwindow.resizable(False,False)'''
 
