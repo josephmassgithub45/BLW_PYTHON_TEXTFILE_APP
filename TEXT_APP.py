@@ -15,14 +15,16 @@ class TEXT_APP:
         mainwindow.resizable(False,False)
 
         def open_text():
-            file=filedialog.askopenfilename(initialdir="c:",title="BLW_OPEN TEXT FILE")
-            textfile=open(file,'r')
+            text_file=filedialog.askopenfilename(initialdir="c:",title="BLW_OPEN TEXT FILE")
+            textfile=open(text_file,'r')
             notes=textfile.read()
             textarea.insert(END,notes)
             textfile.close()
 
         def save_text():
-            man="man"
+            text_file=open("database.txt","w")
+            text_file.write(textarea.get(1.0,END))
+
 
         textarea=Text(mainwindow,width=70,height=15,font='times 15 bold')
         textarea.pack(pady=30)
