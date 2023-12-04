@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import filedialog
-from tkinter import image
+
 
 class TEXT_APP:
     def __init__(self,at,ac):
