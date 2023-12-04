@@ -1,3 +1,2 @@
-hello to you all
-how are you doing?
-i am fine
+this is my text file
+hello world

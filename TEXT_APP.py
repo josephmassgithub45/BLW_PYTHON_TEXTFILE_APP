@@ -11,7 +11,7 @@ class TEXT_APP:
         mainwindow.title(self.apptitle)
         mainwindow.configure(background=self.appcolor)
         mainwindow.iconbitmap()
-        mainwindow.geometry('770x650')
+        mainwindow.geometry('1065x650')
         mainwindow.resizable(False,False)
 
         def open_text():
@@ -22,18 +22,20 @@ class TEXT_APP:
             textfile.close()
 
         def save_text():
-            text_file=open("database.txt","w")
+            text_file=filedialog.askopenfilename(initialdir="c:",title="BLW_OPEN TEXT FILE")
+            text_file=open(text_file,"w")
             text_file.write(textarea.get(1.0,END))
 
 
-        textarea=Text(mainwindow,width=70,height=15,font='times 15 bold')
-        textarea.pack(pady=30)
+        textarea=Text(mainwindow,width=100,height=20,font='times 15 bold')
+        textarea.place(x=30,y=20)
+        
         
         open_button=Button(mainwindow,text="Open Text File",command=open_text)
-        open_button.pack(pady=10)
-
+        open_button.place(x=30,y=500)
+        
         save_button=Button(mainwindow,text="Save File",command=save_text)
-        save_button.pack(padx=20)
+        save_button.place(x=150,y=500)
         
 
 
@@ -41,5 +43,5 @@ class TEXT_APP:
 
 
 
-APPLICATION=TEXT_APP("BLW_TEXT_APP","red")
+APPLICATION=TEXT_APP("BLUE LIGHT WAVES                 BLW_TEXT_APP","red")
 APPLICATION.home()
