@@ -3,17 +3,18 @@ from tkinter import filedialog
 
 
 class TEXT_APP:
-    def __init__(self,at,ac):
+    def __init__(self,at,ac,ic):
         self.apptitle=at
         self.appcolor=ac
+        self.icon=ic
 
     def home(self):
         mainwindow=Tk()
         mainwindow.title(self.apptitle)
         mainwindow.configure(background=self.appcolor)
-        '''mainwindow.iconbitmap('BLUE LIGHT WAVES AI LOGO.ico')'''
+        mainwindow.iconbitmap(self.icon)
         mainwindow.geometry('1065x650')
-        '''mainwindow.resizable(False,False)'''
+        mainwindow.resizable(False,False)
 
         def open_text():
             text_file=filedialog.askopenfilename(initialdir="c:",title="BLW_OPEN TEXT FILE")
@@ -44,5 +45,5 @@ class TEXT_APP:
 
 
 
-APPLICATION=TEXT_APP("BLUE LIGHT WAVES                                 BLW_TEXT_APP","blue")
+APPLICATION=TEXT_APP("BLUE LIGHT WAVES      BLW_TEXT_APP","blue","BLW_LOGO.ico")
 APPLICATION.home()
