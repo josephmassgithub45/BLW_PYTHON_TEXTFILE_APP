@@ -1,3 +1,4 @@
+from string import hexdigits
 from tkinter import *
 from tkinter import filedialog
 
@@ -14,7 +15,7 @@ class TEXT_APP:
         mainwindow.configure(background=self.appcolor)
         mainwindow.iconbitmap(self.icon)
         mainwindow.geometry('1065x650')
-        mainwindow.resizable(False,False)
+        mainwindow.resizable(False,True)
 
         def open_text():
             text_file=filedialog.askopenfilename(initialdir="c:",title="BLW_OPEN TEXT FILE")
@@ -29,26 +30,32 @@ class TEXT_APP:
             text_file.write(textarea.get(1.0,END))
             text_file.close()
             message=Label(dialog,text="File Saved Successfully...",font='times 20 bold',background="grey")
-            message.place(x=50,y=7)
-
+            message.place(x=50,y=1)
+        
+        def resize():
+            mainwindow.geometry('1065x650')
 
         heading=Label(mainwindow,text="BLUE LIGHT WAVES ",font='times 25 bold',foreground="white",background="blue")
         heading.place(x=350,y=5)
 
         textarea=Text(mainwindow,width=96,height=20,font='times 15 bold',background='grey',border=20)
         textarea.place(x=30,y=50)
+  
 
-        dialog=Frame(mainwindow,width=400,height=50,background='grey')
+        dialog=Frame(mainwindow,width=400,height=50,background='grey',border=10)
         dialog.place(x=633,y=570)
         
-        open_button=Button(mainwindow,text="Open Text File",font='times 15 bold',command=open_text)
+        open_button=Button(mainwindow,text="Open Text File",font='times 15 bold',background="lightblue",command=open_text)
         open_button.place(x=290,y=560)
         
-        save_button=Button(mainwindow,text="Save File",font='times 15 bold',background="red",command=save_text)
+        save_button=Button(mainwindow,text="Save File",font='times 15 bold',background="lightblue",command=save_text)
         save_button.place(x=460,y=560)
+
+        resizebutton=Button(mainwindow,text="Resize",font='times 15 bold')
+        resizebutton.place(x=30,y=560)
         
-        developer=Label(mainwindow,text="Developed By Mr Joseph Massaquoi.",font='times 20 bold',background="blue",foreground="white")
-        developer.place(x=30,y=600)
+        developer=Label(mainwindow,text='Developer : "Mr Joseph Massaquoi".',font='times 20 bold',background="blue",foreground="white")
+        developer.place(x=30,y=610)
 
         mainwindow.mainloop()
 
@@ -56,3 +63,4 @@ class TEXT_APP:
 
 APPLICATION=TEXT_APP("BLUE LIGHT WAVES   TEXT_APP","blue","BLW_LOGO.ico")
 APPLICATION.home()
+
