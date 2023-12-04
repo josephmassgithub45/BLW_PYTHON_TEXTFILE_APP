@@ -14,7 +14,7 @@ class TEXT_APP:
         mainwindow.title(self.apptitle)
         mainwindow.configure(background=self.appcolor)
         mainwindow.iconbitmap(self.icon)
-        mainwindow.geometry('1065x650')
+        mainwindow.geometry('1300x650')
         mainwindow.resizable(False,True)
 
         def open_text():
@@ -32,18 +32,17 @@ class TEXT_APP:
             message=Label(dialog,text="File Saved Successfully...",font='times 20 bold',background="grey")
             message.place(x=50,y=1)
         
-        def resize():
-            mainwindow.geometry('1065x650')
+        
 
         heading=Label(mainwindow,text="BLUE LIGHT WAVES ",font='times 25 bold',foreground="white",background="blue")
-        heading.place(x=350,y=5)
+        heading.place(x=490,y=5)
 
-        textarea=Text(mainwindow,width=96,height=20,font='times 15 bold',background='grey',border=20)
-        textarea.place(x=30,y=50)
+        textarea=Text(mainwindow,width=123,height=20,font='times 15 bold',border=20)
+        textarea.place(x=14,y=50)
   
 
-        dialog=Frame(mainwindow,width=400,height=50,background='grey',border=10)
-        dialog.place(x=633,y=570)
+        dialog=Frame(mainwindow,width=400,height=50,border=10)
+        dialog.place(x=886,y=570)
         
         open_button=Button(mainwindow,text="Open Text File",font='times 15 bold',background="lightblue",command=open_text)
         open_button.place(x=290,y=560)
@@ -51,11 +50,8 @@ class TEXT_APP:
         save_button=Button(mainwindow,text="Save File",font='times 15 bold',background="lightblue",command=save_text)
         save_button.place(x=460,y=560)
 
-        resizebutton=Button(mainwindow,text="Resize",font='times 15 bold')
-        resizebutton.place(x=30,y=560)
-        
         developer=Label(mainwindow,text='Developer : "Mr Joseph Massaquoi".',font='times 20 bold',background="blue",foreground="white")
-        developer.place(x=30,y=610)
+        developer.place(x=10,y=610)
 
         mainwindow.mainloop()
 
